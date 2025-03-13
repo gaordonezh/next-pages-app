@@ -1,25 +1,36 @@
 import React from 'react';
-import type { GetStaticPropsContext, PreviewData } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import { useRouter } from 'next/router';
+import Layout from '@/components/templates/Layout';
+import PagesAndNavigation from '@/components/molecules/PagesAndNavigation';
+import DinamicRoutes from '@/components/molecules/DinamicRoutes';
+import ApiRoutes from '@/components/molecules/ApiRoutes';
 
-export type Repo = {
-  name: string;
-  stargazers_count: number;
-};
+const spacingClassnames = 'flex flex-col items-start justify-start gap-4';
 
-const RoutingPage = ({ repo }: { repo: Repo }) => {
-  console.log(repo);
-  return <div>RoutingPage</div>;
+const RoutingPage = () => {
+  const { query } = useRouter();
+
+  const components = {
+    '1': <PagesAndNavigation />,
+    '2': <DinamicRoutes />,
+    '3': <ApiRoutes />,
+  };
+
+  return (
+    <Layout>
+      <div className="flex flex-col gap-20">
+        {query.part ? (
+          <div className={spacingClassnames}>{components[query.part as keyof typeof components]}</div>
+        ) : (
+          Object.values(components).map((component, index) => (
+            <div key={index} className={spacingClassnames}>
+              {component}
+            </div>
+          ))
+        )}
+      </div>
+    </Layout>
+  );
 };
 
 export default RoutingPage;
-
-export async function getStaticProps(context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>) {
-  const res = await fetch('https://api.github.com/repos/vercel/next.js');
-  const repo = await res.json();
-  return {
-    props: {
-      repo,
-    },
-  };
-}

@@ -1,18 +1,21 @@
 import React from 'react';
 import type { GetStaticPropsContext, PreviewData } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { Repo } from '../routing';
+import { Repo } from '@/interfaces/global';
+import Layout from '@/components/templates/Layout';
 
 const StaticPathsPage = ({ repo }: { repo: Repo }) => {
-  console.log('repo', repo);
+  // console.log('repo', repo);
   return (
-    <div className={`items-center justify-items-center py-10`}>
-      <h1>
-        data with <code>getStaticPaths</code>
-      </h1>
-      <p>Name: {repo?.name ?? 'OTHER'}</p>
-      <p>Name: {repo?.stargazers_count ?? 'OTHER'}</p>
-    </div>
+    <Layout>
+      <div className={`items-center justify-items-center py-10`}>
+        <h1>
+          data with <code>getStaticPaths</code>
+        </h1>
+        <p>Name: {repo?.name ?? 'OTHER'}</p>
+        <p>Name: {repo?.stargazers_count ?? 'OTHER'}</p>
+      </div>
+    </Layout>
   );
 };
 
