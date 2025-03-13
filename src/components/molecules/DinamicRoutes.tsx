@@ -16,6 +16,7 @@ const DinamicRoutes = ({ title }: DinamicRoutesProps) => {
 
   useEffect(() => {
     obtainUsers();
+    // eslint-disable-next-line
   }, [currentPage]);
 
   const obtainUsers = async () => {

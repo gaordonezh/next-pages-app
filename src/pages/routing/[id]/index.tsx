@@ -31,6 +31,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext<Pars
     if (!userData) throw new Error('USER_NOT_FOUND');
 
     return { props: userData.data };
+    // eslint-disable-next-line
   } catch (error) {
     return { redirect: { permanent: false, destination: '/' } };
   }

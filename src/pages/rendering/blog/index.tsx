@@ -42,6 +42,7 @@ const BlogPage = ({ blogList }: BlogPageProps) => {
 export default BlogPage;
 
 export const getStaticProps = async (context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>) => {
+  console.log('CTX', context);
   const res: Array<BlogProps> = await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
 
   return {

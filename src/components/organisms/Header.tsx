@@ -8,6 +8,7 @@ const Header = ({ className, ...rest }: HTMLAttributes<HTMLHeadElement>) => {
 
   useEffect(() => {
     setCurrent(window.location.pathname);
+    // eslint-disable-next-line
   }, [typeof window !== 'undefined' && window.location.href]);
 
   return (
