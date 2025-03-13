@@ -1,19 +1,34 @@
-import { GetServerSidePropsContext, PreviewData } from 'next';
-import { ParsedUrlQuery } from 'querystring';
-import Typography from '@/components/atoms/Typography';
-import { Repo } from '@/interfaces/global';
 import Layout from '@/components/templates/Layout';
+import DinamicRoutes from '@/components/molecules/DinamicRoutes';
+import ServerSideRendering from '@/components/molecules/ServerSideRendering';
+import { useRouter } from 'next/router';
+
+const spacingClassnames = 'flex flex-col items-start justify-start gap-4';
 
 const RenderingPage = () => {
+  const { query } = useRouter();
+
+  const components = {
+    '4': (
+      <div className="flex flex-col gap-4">
+        <DinamicRoutes title="Client-side Rendering" />
+      </div>
+    ),
+    '5': <ServerSideRendering />,
+  };
+
   return (
-    <Layout>
-      <div>
-        <Typography is="h1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate libero quaerat ex dignissimos
-          doloribus id, nostrum porro, nemo totam quo quae corporis eius dolorem ut minus, ducimus beatae error.
-        </Typography>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, cum harum! Harum libero neque illo tempora.
-        Asperiores vero iusto dolorem velit, iure repudiandae magnam molestias, harum est, voluptatibus beatae id!
+    <Layout title="Renderizado - Next JS">
+      <div className="flex flex-col gap-20">
+        {query.part ? (
+          <div className={spacingClassnames}>{components[query.part as keyof typeof components]}</div>
+        ) : (
+          Object.values(components).map((component, index) => (
+            <div key={index} className={spacingClassnames}>
+              {component}
+            </div>
+          ))
+        )}
       </div>
     </Layout>
   );

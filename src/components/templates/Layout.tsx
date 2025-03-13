@@ -12,7 +12,7 @@ interface LayoutProps {
   description?: string;
 }
 
-const containerClassnames = 'max-w-7xl mx-auto px-10 ';
+const containerClassnames = 'max-w-6xl mx-auto px-10 ';
 
 const Layout = ({ children, ...rest }: LayoutProps) => {
   const router = useRouter();

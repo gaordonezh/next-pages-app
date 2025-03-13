@@ -23,25 +23,33 @@ export const links: LinksProps = [
     ],
   },
   {
-    label: 'Renderizado y Obtención de datos',
-    path: '/data-fetching',
-    items: [
-      { label: 'getStaticProps', seen: false, id: 6 },
-      { label: 'getStaticPaths', seen: false, id: 7 },
-      { label: 'getServerSideProps', seen: false, id: 8 },
-      { label: 'Incremental Static Regeneration', seen: false, id: 9 },
-      { label: 'Client-side Fetching', seen: false, id: 10 },
-    ],
-  },
-  {
     label: 'Optimizaciones',
     path: '/optimization',
     items: [
-      { label: 'Image', seen: false, id: 11 },
-      { label: 'Fonts', seen: false, id: 12 },
-      { label: 'Script', seen: false, id: 13 },
-      { label: 'Lazy loading', seen: false, id: 14 },
-      { label: 'Analythics', seen: false, id: 15 },
+      { label: 'Image', seen: false, id: 6 },
+      { label: 'Fonts', seen: false, id: 7 },
+      { label: 'Lazy loading', seen: false, id: 8 },
     ],
+  },
+];
+
+export const renderingList = [
+  {
+    path: '/rendering/blog',
+    title: 'getStaticProps',
+    description:
+      'Se usa para obtener datos en tiempo de compilación. Next.js pre-renderiza la página con los datos devueltos, lo que hace que las páginas sean súper rápidas y se puedan servir desde un CDN. Ideal para contenido que no cambia con frecuencia. Como por ejemplo, un blog con contenido estático.',
+  },
+  {
+    path: '/rendering/blog/1',
+    title: 'getStaticPaths',
+    description:
+      'Se usa junto con getStaticProps en rutas dinámicas. Define qué rutas dinámicas se generan en la compilación. Por ejemplo para generar páginas estáticas para cada publicación de un blog.',
+  },
+  {
+    path: '/routing/3',
+    title: 'getServerSideProps',
+    description:
+      'Obtiene datos en cada solicitud del servidor. La página se renderiza en tiempo real, útil para contenido que cambia constantemente o necesita datos de sesión. Por ejemplo se puede usar en un panel de usuario con datos actualizados en cada carga.',
   },
 ];

@@ -12,12 +12,12 @@ const RoutingPage = () => {
 
   const components = {
     '1': <PagesAndNavigation />,
-    '2': <DinamicRoutes />,
+    '2': <DinamicRoutes title="Rutas dinámicas" />,
     '3': <ApiRoutes />,
   };
 
   return (
-    <Layout>
+    <Layout title="Enrutamiento - Next JS">
       <div className="flex flex-col gap-20">
         {query.part ? (
           <div className={spacingClassnames}>{components[query.part as keyof typeof components]}</div>

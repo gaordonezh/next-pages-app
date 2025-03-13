@@ -1,8 +1,3 @@
-export type Repo = {
-  name: string;
-  stargazers_count: number;
-};
-
 export type LinksProps = Array<{
   label: string;
   path: string;
@@ -15,4 +10,16 @@ export interface UserProps {
   email: string;
   first_name: string;
   last_name: string;
+}
+
+export type DefaultResponseType = {
+  success?: boolean;
+  error?: boolean;
+  message?: string;
+};
+
+export interface BlogProps {
+  id: number;
+  title: string;
+  body: string;
 }

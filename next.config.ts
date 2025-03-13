@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   //   },
   // },
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'reqres.in' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'reqres.in' },
+      { protocol: 'https', hostname: 'www.axelerant.com' },
+    ],
   },
 };
 
