@@ -35,16 +35,13 @@ const OptimizationPage = () => {
           pantalla.
         </Typography>
         <Typography is="p">
-          → <b>Layout:</b> intrinsic | fixed | fill | responsive
+          → <b>Priority:</b> Prioridad de carga
         </Typography>
         <Typography is="p">
-          → <b>Priority:</b>
+          → <b>Quality</b> Calidad de carga
         </Typography>
         <Typography is="p">
-          → <b>Quality</b>
-        </Typography>
-        <Typography is="p">
-          → <b>Sizes:</b>
+          → <b>Sizes:</b> Medidas custom
         </Typography>
         <Typography is="p">
           → <b>Loading:</b> lazy | eager

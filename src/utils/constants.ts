@@ -2,7 +2,7 @@ import { LinksProps } from '@/interfaces/global';
 
 export const storageKey = 'nextjs@list';
 
-export const AppTitle = 'Next.js: Arquitectura, Renderizado y Optimización en Aplicaciones Web';
+export const AppTitle = 'Next.js: Enrutamiento, Renderizado y Optimización en Aplicaciones Web';
 
 export const links: LinksProps = [
   {
