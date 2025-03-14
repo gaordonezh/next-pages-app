@@ -17,7 +17,7 @@ const RoutingPage = () => {
   };
 
   return (
-    <Layout title="Enrutamiento - Next JS">
+    <Layout title="Arquitectura - Next JS">
       <div className="flex flex-col gap-20">
         {query.part ? (
           <div className={spacingClassnames}>{components[query.part as keyof typeof components]}</div>
