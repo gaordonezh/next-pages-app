@@ -15,13 +15,13 @@ const HomePage = () => {
   useEffect(() => {
     setList([...links]);
 
-    // const savedData = storage.get();
-    // if (savedData) {
-    //   setList([...savedData]);
-    // } else {
-    //   storage.set(links);
-    //   setList([...links]);
-    // }
+    const savedData = storage.get();
+    if (savedData) {
+      setList([...savedData]);
+    } else {
+      storage.set(links);
+      setList([...links]);
+    }
   }, []);
 
   const handleOpen = (iOne: number, iTwo: number, external?: boolean) => {
@@ -45,7 +45,7 @@ const HomePage = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center gap-20 pt-10 pb-20">
-        <Typography is="h2" className="text-center">
+        <Typography is="h3" className="text-center max-w-xl">
           {AppTitle}
         </Typography>
 

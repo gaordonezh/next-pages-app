@@ -21,7 +21,7 @@ const Header = ({ className, ...rest }: HTMLAttributes<HTMLHeadElement>) => {
       </Link>
 
       <nav>
-        <ul className="flex gap-5">
+        <ul className="flex flex-col gap-0 sm:flex-row sm:gap-5">
           {links.map(({ label, path }) => (
             <li key={path}>
               <Link className={classNames('hover:text-primary', current === path && 'text-primary')} href={path}>

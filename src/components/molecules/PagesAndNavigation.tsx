@@ -14,7 +14,7 @@ const PagesAndNavigation = () => {
         width={1416}
         height={916}
         priority
-        className="h-96 w-auto"
+        className="h-auto w-auto sm:h-96"
       />
     </Fragment>
   );

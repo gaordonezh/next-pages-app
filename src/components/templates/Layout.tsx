@@ -45,7 +45,7 @@ const Layout = ({ children, ...rest }: LayoutProps) => {
 
         {/* OG TAGS - START */}
         <meta property="og:title" content={title} />
-        <meta property="og:site_name" content="Biomedical HT" />
+        <meta property="og:site_name" content={title} />
         <meta property="og:type" content="page" />
         <meta property="og:image" content={image} />
         <meta property="og:url" content={realURL} />

@@ -22,8 +22,8 @@ const RoutingPage = () => {
         {query.part ? (
           <div className={spacingClassnames}>{components[query.part as keyof typeof components]}</div>
         ) : (
-          Object.values(components).map((component, index) => (
-            <div key={index} className={spacingClassnames}>
+          Object.entries(components).map(([key, component]) => (
+            <div key={key} className={spacingClassnames}>
               {component}
             </div>
           ))
